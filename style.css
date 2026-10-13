@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    animation: slideIn 2s ease-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 5px;
+}
+
+nav ul li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.image {
+    height: 220px;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    transition: transform 0.5s ease,
+                opacity 0.3s ease;
+}
+
+#image1 {
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600");
+    animation-delay: 0.2s;
+}
+
+#image2 {
+    background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600");
+    animation-delay: 0.5s;
+}
+
+#image3 {
+    background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600");
+    animation-delay: 0.8s;
+}
+
+.image:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.info {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 650px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.image.selecionada {
+    outline: 4px solid #ff6347;
+    outline-offset: -4px;
+}
